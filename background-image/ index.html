@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>背景画像とレスポンシブ</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap" rel="stylesheet">
+
+	<style>
+			body {
+			margin-top: 0;
+			margin-right: 0;
+			margin-left: 0;
+		}
+		.wrapper {
+			padding-top: 10px;
+			border-top: 1px solid limegreen;
+			font-family: 'Noto Sans JP', sans-serif;
+			font-size: 62.5%;
+			line-height: 1.8;
+		}
+		.intro {
+			max-width: 800px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 15px;
+			box-sizing: border-box;
+		}
+		h1 {
+			font-size: 2.6em;
+			font-weight: 700;
+		}
+		.heading-type01 {
+			max-width: 800px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 15px;
+			box-sizing: border-box;
+		}
+		section {
+			margin-top: 60px;
+		}
+		section:first-child {
+			margin-top: 30px;
+		}
+
+		h2 {
+			font-size: 2.0em;
+		}
+		p {
+			font-size: 1.6em;
+		}
+		.sample-block {
+			max-width: 100%;
+			min-height: 240px;
+			margin: 0 auto;
+			background-image: url('http://placekitten.com/1000/240');
+			background-repeat: no-repeat;
+			/*background-position: 50% 50%;*/
+			background-color: yellow;
+			border: 1px solid #f00;
+		}
+		.sample-type01 { background-size: auto;}
+		.sample-type02 { background-size: contain;}
+		.sample-type03 { background-size: cover;}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="intro">
+		<h1>レスポンシブデザイン時の背景画像の状態と注意点</h1>
+		<p>背景画像の各種プロパティと、画面幅の伸び縮みによっての状態変化、デザイン作成時の注意点などをまとめる。背景画像枠と背景画像の高さを240pxに統一した例で一覧にした。</p>
+	</div><!-- /.intro -->
+
+	<section class="section-type01">
+		<div class="heading-type01">
+			<h2 class="heading-title01">background-size: auto; の場合</h2>
+			<p>表示領域よりも小さいサイズの画像を配置した例。デフォルトでは左・上を基点に配置される。<br>また、表示領域（ブラウザ幅）が画像よりも小さくなった場合、左・上を基点に画像が見切れる（画像は伸縮しない）。</p>
+		</div>
+		<div class="sample-block sample-type01"></div>
+	</section><!-- /.section-type01 -->
+
+	<section class="section-type02">
+		<div class="heading-type01">
+			<h2 class="heading-title01"> background-size: contain; の場合</h2>
+			<p>表示領域よりも小さいサイズの画像を contain 指定した例。デフォルトでは左・上を基点に配置される。<br>また、表示領域（ブラウザ）のサイズにより画像は縦横比そのままに伸縮し、必ず画像全体が見えるように配置される。<br>これにより、画像と表示領域の縦横比が合わなければ、背景（例では黄色）が見えてしまう。</p>
+		</div>
+		<div class="sample-block sample-type02"></div>
+	</section><!-- /.section-type02 -->
+
+	<section class="section-type03">
+		<div class="heading-type01">
+			<h2 class="heading-title01"> background-size: cover; の場合</h2>
+			<p>表示領域よりも小さいサイズの画像を cover 指定した例。デフォルトでは左・上を基点に配置される。<br>また、表示領域（ブラウザ）のサイズ内を埋め尽くすように拡大・縮小し、左・上を基点に画像が見切れる。</p>
+		</div>
+		<div class="sample-block sample-type03"></div>
+	</section><!-- /.section-type03 -->
+<p style="text-align: center;"> Photo by <a href="http://placekitten.com/">{placekitten}</a> </p>
+</div><!-- /.wrapper -->
+</body>
+</html>
