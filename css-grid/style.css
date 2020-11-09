@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 20px;
+    font-size: 18px;
+    font-family: monospace;
+}
+pre, code {
+    margin: 0;
+    padding: 0;
+}
+code {
+    margin-bottom: -30px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.contents-wrapper {
+    margin-bottom: 160px;
+}
+
+.title-type02 {
+    padding-left: 20px;
+    line-height: 1.8;
+    border-left: 2px solid yellowgreen;
+    background-color: #eee;
+}
+.title-type03 {
+    padding-left: 20px;
+    line-height: 1.8;
+    color: #333;
+    border-left: 5px solid yellowgreen;
+}
+.title-type04::before {
+    content: '▼';
+    margin-right: 10px;
+    font-size: 20px;
+    color: yellowgreen;
+}
+
+.content-example {
+    margin-top: 100px;
+}
+.code-preview-area {
+    width: 100%;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.code-preview-area:first-child {
+    margin-top: 0;
+}
+
+
+/* グリッドラッパー */
+.grid-wrapper {
+    display: grid;
+}
+
+.grid-wrapper-example02-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+}
+.grid-wrapper-example02-2 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-wrapper-example02-3 {
+    grid-template-columns: repeat(5, 1fr 2fr);
+}
+.grid-wrapper-example02-4 {
+    flex-direction: column-reverse;
+}
+
+.grid-wrapper-example03-1 {
+    /* flex-direction: row 初期値・省略可能 */
+    flex-wrap: nowrap; /* 初期値 */
+}
+.grid-wrapper-example03-2 {
+    /* flex-direction: row 初期値・省略可能 */
+    flex-wrap: wrap;
+}
+.grid-wrapper-example03-3 {
+    /* flex-direction: row 初期値・省略可能 */
+    flex-wrap: wrap-reverse;
+}
+
+.grid-wrapper-example04-1 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: flex-start; /* 初期値 */
+}
+.grid-wrapper-example04-2 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: flex-end;
+}
+.grid-wrapper-example04-3 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: center;
+}
+.grid-wrapper-example04-4 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: space-between;
+}
+.grid-wrapper-example04-5 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: space-around;
+}
+.grid-wrapper-example04-6 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: space-evenly;
+}
+.grid-wrapper-example04-7 {
+    /* flex-direction: row; 初期値・省略可能 */
+    /* flex-wrap: nowrap;   初期値・省略可能 */
+    justify-content: stretch;
+}
+
+.grid-wrapper-example05-1 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    /* justify-content: flex-start; 初期値・省略可能 */
+    align-items: stretch;        /* 初期値・省略可能 */
+}
+.grid-wrapper-example05-1.type-column {
+    flex-direction: column;
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    /* justify-content: flex-start; 初期値・省略可能 */
+    align-items: stretch;        /* 初期値・省略可能 */
+}
+.grid-wrapper-example05-2 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    /* justify-content: flex-start; 初期値・省略可能 */
+    align-items: flex-start;
+}
+.grid-wrapper-example05-3 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    /* justify-content: flex-start; 初期値・省略可能 */
+    align-items: flex-end;
+}
+.grid-wrapper-example05-4 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    /* justify-content: flex-start; 初期値・省略可能 */
+    align-items: center;
+}
+.grid-wrapper-example05-5 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    /* justify-content: flex-start; 初期値・省略可能 */
+    align-items: baseline;
+}
+
+.grid-wrapper-example06-1 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wraps;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: stretch;      /* 初期値・省略可能 */
+}
+.grid-wrapper-example6-1.type-column {
+    min-height: 300px;
+    flex-direction: column;
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: stretch;      /* 初期値・省略可能 */
+}
+.grid-wrapper-example06-2 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: flex-start;
+}
+.grid-wrapper-example06-3 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: flex-end;
+}
+.grid-wrapper-example06-4 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: center;
+}
+    .grid-wrapper-example06-5 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: space-between;
+}
+.grid-wrapper-example06-6 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: space-around;
+}
+.grid-wrapper-example06-7 {
+    min-height: 300px;
+    /* flex-direction: row;         初期値・省略可能 */
+    /* flex-wrap: nowrap;           初期値・省略可能 */
+    flex-wrap: wrap;
+    /* justify-content: flex-start; 初期値・省略可能 */
+    /* align-items: stretch;        初期値・省略可能 */
+    align-content: space-evenly;
+}
+
+
+
+
+/* グリッドアイテム */
+.grid-items {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #fff;
+    background-color: yellowgreen;
+}
+.grid-items:first-child {
+    background-color: #6cb90d;
+}
+
+.grid-wrapper-example07 :nth-child(1) { order: -1; }
+.grid-wrapper-example07 :nth-child(2) { order: -2; }
+.grid-wrapper-example07 :nth-child(3) { /* order: 0; */ } /* 初期値・省略可能 */
+.grid-wrapper-example07 :nth-child(4) { order: 1; }
+.grid-wrapper-example07 :nth-child(5) { order: 3; }
+.grid-wrapper-example07 :nth-child(6) { order: -2; }
+
+.grid-wrapper-example08 :nth-child(1) { flex-grow: 1; }
+.grid-wrapper-example08 :nth-child(2) { /* flex-grow: 0; */ } /* 初期値・省略可能 */
+.grid-wrapper-example08 :nth-child(3) { flex-grow: 2; }
+.grid-wrapper-example08 :nth-child(4) { /* flex-grow: 0; */ } /* 初期値・省略可能 */
+
+.grid-wrapper-example09 :nth-child(1) { flex-shrink: 10; }
+.grid-wrapper-example09 :nth-child(2) { flex-shrink: 5; }
+.grid-wrapper-example09 :nth-child(3) { /* flex-shrink: 1; */ } /* 初期値・省略可能  */ 
+.grid-wrapper-example09 :nth-child(4) { flex-shrink: 0; }       /* オリジナルサイズ  */ 
+.grid-wrapper-example09 :nth-child(5) { /* flex-shrink: 1; */ } /* 初期値・省略可能  */ 
+.grid-wrapper-example09 :nth-child(6) { /* flex-shrink: 1; */ } /* 初期値・省略可能  */ 
+.grid-wrapper-example09 :nth-child(7) { flex-shrink: 15; }
+.grid-wrapper-example09 :nth-child(8) { flex-shrink: 20; }
+
+.grid-wrapper-example10 :nth-child(1) { /* flex-basis: auto; */ } /* 初期値・省略可能  */ 
+.grid-wrapper-example10 :nth-child(2) { /* flex-basis: auto; */ } /* 初期値・省略可能  */ 
+.grid-wrapper-example10 :nth-child(3) { flex-basis: 350px; }
+.grid-wrapper-example10 :nth-child(4) { /* flex-basis: auto; */ } /* 初期値・省略可能  */ 
+.grid-wrapper-example10 :nth-child(5) { flex-basis: 50px; }
+
+.grid-wrapper-example11 :nth-child(1) { align-self: auto; } /* 初期値・省略可能  */ 
+.grid-wrapper-example11 :nth-child(2) { align-self: flex-start; }
+.grid-wrapper-example11 :nth-child(3) { align-self: flex-end; }
+.grid-wrapper-example11 :nth-child(4) { align-self: center; } 
+.grid-wrapper-example11 :nth-child(5) { align-self: baseline; }
+.grid-wrapper-example11 :nth-child(6) { align-self: stretch; }
+
+
+/* ＝＝＝＝＝＝＝＝＝＝
+ * サンプル1：space-between の挙動
+ * ＝＝＝＝＝＝＝＝＝ */
+ .grid-wrapper-sample01 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.grid-wrapper-sample01._after::after {
+    content: "";
+    display: block;
+    width: calc(100% / 2);
+    border: 1px solid #f00;
+    box-sizing: border-box;
+}
+.grid-wrapper-sample01 .flex-items {
+    width: calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝
+ * サンプル2：space-between の挙動
+ * ＝＝＝＝＝＝＝＝＝ */
+ .grid-wrapper-sample02 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ .grid-wrapper-sample02._after::after {
+    content: "";
+    display: block;
+    width: calc(100% / 5 * 4);
+    color: #f00;
+    text-align: center;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+.grid-wrapper-sample02 .flex-items {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 5);
+}
+.flex-items img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css grid 指定一覧</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<section class="flex-example">
+    <div>
+        <h1 class="title-type01">flexbox 指定一覧</h1>
+    </div>
+
+    <section class="contents-wrapper">
+        <div>
+            <h2 class="title-type02">1. display: grid;</h2>
+        </div>
+        <div class="contents">
+            <p class="introduction">display: grid;を指定した要素がグリッドになります。また、ラッパーのグリッド内のすべての要素がグリッドアイテムになります（グリッドアイテム内の要素はグリッドアイテムにならない点に注意）。</p>
+            <div class="content-example">
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example01">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                    </div>
+            </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-html">
+            &lt;!-- html --&gt;
+            &lt;div class="grid-wrapper"&gt;
+                &lt;div class="grid-items"&gt;グリッドアイテム1&lt;/div&gt;
+                &lt;div class="grid-items"&gt;グリッドアイテム2&lt;/div&gt;
+                &lt;div class="grid-items"&gt;グリッドアイテム3&lt;/div&gt;
+                &lt;div class="grid-items"&gt;グリッドアイテム4&lt;/div&gt;
+                &lt;div class="grid-items"&gt;グリッドアイテム5&lt;/div&gt;
+                &lt;div class="grid-items"&gt;グリッドアイテム6&lt;/div&gt;
+            &lt;/div>
+                        </code>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contents-wrapper">
+        <div>
+            <h2 class="title-type02">2. grid ラッパー向け：グリッドの行と列を定義。grid-template-columns/rowプロパティ</h2>
+        </div>
+        <div class="contents">
+            <p class="introduction">横方向（行）を定義する grid-template-columns プロパティ。縦方向（列）を定義する grid-template-rows プロパティ</p>
+
+            <div class="content-example">
+                <h3 class="title-type03">2-1. grid ラッパーで gridアイテムの行と列を定義する</h3>
+                <p>gridアイテムが3行2列に並びます</p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example02-1">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr; /* 行数と幅 */
+                grid-template-rows: 50px 50px;      /* 列数と幅 */
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="content-example">
+                <h3 class="title-type03">2-2. repeat記法でトラック（グリッドアイテム）を列挙する</h3>
+                <p>gridアイテムが3列（repeat記法）</p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example02-2">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1frと同じ */
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="content-example">
+                <h3 class="title-type03">2-3. repeat記法でトラック（グリッドアイテム）を列挙する</h3>
+                <p>10のトラックの内、1fr トラックに 2fr トラックが続くパターンを5回繰り返す（repeat記法）</p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example02-3">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                        <div class="grid-items">グリッドアイテム9</div>
+                        <div class="grid-items">グリッドアイテム10</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr 2fr);
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+</body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/monokai-sublime.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html>
