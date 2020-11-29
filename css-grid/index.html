@@ -443,6 +443,73 @@
                 </div>
             </div>
 
+            <div class="contents" id="2c">
+                <div class="content-example">
+                    <h3 class="title-type03">2-15. grid-template-areas: none; の場合（初期値）</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-15">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows:    none; /* 初期値 */
+                    grid-template-areas:   none; /* 初期値 */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-16. grid-template-areas: "a b c"; の場合（初期値）</h3>
+                    <p>グリッドアイテムに指定した名前を利用して、グリッド内の配置位置を指定する。</p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-16">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows:    none; /* 初期値 */
+                    grid-template-areas: "a a a e"
+                                         "b c c ."
+                                         "b d d ."
+                                         "f f f .";
+                    }
+                .grid-wrapper-example02-16 :nth-child(1){ grid-area: a;}
+                .grid-wrapper-example02-16 :nth-child(2){ grid-area: b;}
+                .grid-wrapper-example02-16 :nth-child(3){ grid-area: c;}
+                .grid-wrapper-example02-16 :nth-child(4){ grid-area: d;}
+                .grid-wrapper-example02-16 :nth-child(5){ grid-area: e;}
+                .grid-wrapper-example02-16 :nth-child(6){ grid-area: f;}
+
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 

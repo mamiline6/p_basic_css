@@ -124,6 +124,29 @@ p {
     grid-template-rows: auto auto auto;
 }
 
+/*
+ * grid-template-area プロパティ
+ * ・名前付きのグリッド領域を指定する
+*/
+.grid-wrapper-example02-15 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows:    none; /* 初期値 */
+    grid-template-areas:   none; /* 初期値 */
+}
+.grid-wrapper-example02-16 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows:    none; /* 初期値 */
+    grid-template-areas: "a a a e"
+                         "b c c ."
+                         "b d d ."
+                         "f f f .";
+}
+.grid-wrapper-example02-16 :nth-child(1){ grid-area: a;}
+.grid-wrapper-example02-16 :nth-child(2){ grid-area: b;}
+.grid-wrapper-example02-16 :nth-child(3){ grid-area: c;}
+.grid-wrapper-example02-16 :nth-child(4){ grid-area: d;}
+.grid-wrapper-example02-16 :nth-child(5){ grid-area: e;}
+.grid-wrapper-example02-16 :nth-child(6){ grid-area: f;}
 
 
 /* グリッドアイテム */
