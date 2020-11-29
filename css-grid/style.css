@@ -64,6 +64,7 @@ p {
     display: grid;
 }
 
+
 /*
  * grid-template-columns プロパティ
  * ・指定した値の数だけ、列数が増える（グリッドアイテムの上限数による）
@@ -89,6 +90,40 @@ p {
 .grid-wrapper-example02-7 {
     grid-template-columns: auto auto auto;
 }
+
+/*
+ * grid-template-rows プロパティ
+ * ・指定した値の数だけ、行数が増える（グリッドアイテムの上限数による）
+*/
+.grid-wrapper-example02-8 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: none;    /* 初期値 */
+}
+.grid-wrapper-example02-9 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: max-content 600px 100px;
+}
+.grid-wrapper-example02-10 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: min-content 600px 100px;
+}
+.grid-wrapper-example02-11 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: minmax(auto, 300px) 600px 100px;
+}
+.grid-wrapper-example02-12 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: fit-content(300px) fit-content(300px) 100px;
+}
+.grid-wrapper-example02-13 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: repeat(2, 600px 100px);
+}
+.grid-wrapper-example02-14 {
+    grid-template-columns: none; /* 初期値 */
+    grid-template-rows: auto auto auto;
+}
+
 
 
 /* グリッドアイテム */

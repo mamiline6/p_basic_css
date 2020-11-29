@@ -62,8 +62,8 @@
                 <h2 class="title-type02">2. grid ラッパー向け：grid-template プロパティ3種</h2>
                 <ol class="introduction">
                     <li><a href="#2a">縦方向（列）を定義する grid-template-columns プロパティ</a>：グリッド列のライン名とトラックのサイズ変更機能を定義します。</li>
-                    <li>横方向（列）を定義する grid-template-rows プロパティ</li>
-                    <li>名前つきのグリッド領域を指定する grid-template-areas プロパティ</li>
+                    <li><a href="#2b">横方向（行）を定義する grid-template-rows プロパティ</a></li>
+                    <li><a href="#2c">名前つきのグリッド領域を指定する grid-template-areas プロパティ</a></li>
                 </ol>
             </div>
             <div class="contents" id="2a">
@@ -251,6 +251,198 @@
                     </div>
                 </div>
             </div>
+
+            <div class="contents" id="2b">
+                <div class="content-example">
+                    <h3 class="title-type03">2-8. grid-template-rows: auto; の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-8">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows   : none; /* 初期値 */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-9. grid-template-rows: max-content; の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-9">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows: max-content 600px 100px; /* グリッド1の高さ　grid2の高さ グリッド3の高さ 他auto */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-10. grid-template-rows: min-content; の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-10">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows: min-content 600px 100px; /* グリッド1の高さ　grid2の高さ グリッド3の高さ 他auto */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-11. grid-template-rows: minmax(); の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-11">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows: minmax(auto, 300px) 600px 100px; /* グリッド1の高さ　grid2の高さ グリッド3の高さ 他auto */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-12. grid-template-rows: fit-content(); の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-12">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows: fit-content(300px) fit-content(300px) 100px; /* グリッド1の高さ　grid2の高さ グリッド3の高さ 他auto */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-13. grid-template-rows: repeat(); の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-13">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows: repeat(2, 600px 100px); /* グリッド1の高さ　grid2の高さ グリッド3の高さ grid4 他auto */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">2-14. grid-template-rows: auto; の場合</h3>
+                    <p></p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example02-14">
+                            <div class="grid-items">グリッドアイテム1グリッドアイテム1グリッドアイテム1グリッドアイテム1</div>
+                            <div class="grid-items">grid-item2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">grid-item4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">grid-item6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: none; /* 初期値 */
+                    grid-template-rows: auto auto auto; /* グリッド1の高さ　grid2の高さ グリッド3の高さ grid4 他auto */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </div>
 
