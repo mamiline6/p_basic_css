@@ -168,6 +168,25 @@ p {
     grid-auto-columns: fit-content(300px);
 }
 
+/*
+ * grid-auto-rows プロパティ
+ * ・
+*/
+.grid-wrapper-example03-6 {
+    grid-auto-rows: auto; /* 初期値 */
+}
+.grid-wrapper-example03-7 {
+    grid-auto-rows: max-content;
+}
+.grid-wrapper-example03-8 {
+    grid-auto-rows: min-content;
+}
+.grid-wrapper-example03-9 {
+    grid-auto-rows: minmax(auto, 100px);
+}
+.grid-wrapper-example03-10 {
+    grid-auto-rows: fit-content(300px);
+}
 
 
 /* グリッドアイテム */
