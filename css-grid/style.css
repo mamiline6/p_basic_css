@@ -148,6 +148,27 @@ p {
 .grid-wrapper-example02-16 :nth-child(5){ grid-area: e;}
 .grid-wrapper-example02-16 :nth-child(6){ grid-area: f;}
 
+/*
+ * grid-auto-columns プロパティ
+ * ・
+*/
+.grid-wrapper-example03-1 {
+    grid-auto-columns: auto; /* 初期値 */
+}
+.grid-wrapper-example03-2 {
+    grid-auto-columns: max-content;
+}
+.grid-wrapper-example03-3 {
+    grid-auto-columns: min-content;
+}
+.grid-wrapper-example03-4 {
+    grid-auto-columns: minmax(300px, 600px);
+}
+.grid-wrapper-example03-5 {
+    grid-auto-columns: fit-content(300px);
+}
+
+
 
 /* グリッドアイテム */
 .grid-items,
