@@ -498,12 +498,12 @@
                                          "b d d ."
                                          "f f f .";
                     }
-                .grid-wrapper-example02-16 :nth-child(1){ grid-area: a;}
-                .grid-wrapper-example02-16 :nth-child(2){ grid-area: b;}
-                .grid-wrapper-example02-16 :nth-child(3){ grid-area: c;}
-                .grid-wrapper-example02-16 :nth-child(4){ grid-area: d;}
-                .grid-wrapper-example02-16 :nth-child(5){ grid-area: e;}
-                .grid-wrapper-example02-16 :nth-child(6){ grid-area: f;}
+                .grid-wrapper :nth-child(1){ grid-area: a;}
+                .grid-wrapper :nth-child(2){ grid-area: b;}
+                .grid-wrapper :nth-child(3){ grid-area: c;}
+                .grid-wrapper :nth-child(4){ grid-area: d;}
+                .grid-wrapper :nth-child(5){ grid-area: e;}
+                .grid-wrapper :nth-child(6){ grid-area: f;}
 
                             </code>
                         </pre>
@@ -779,6 +779,101 @@
                     display: grid;
                     grid-auto-rows: fit-content(300px);
                 }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contents" id="3c">
+                <div class="content-example">
+                    <h3 class="title-type03">3-11. grid-auto-flow: row; の場合（初期値）</h3>
+                    <p>自動配置の方向を行（横方向）にする</p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example03-11">
+                            <div class="grid-items">グリッドアイテム1</div>
+                            <div class="grid-items">グリッドアイテム2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">グリッドアイテム4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">グリッドアイテム6</div>
+                            <div class="grid-items">グリッドアイテム7</div>
+                            <div class="grid-items">グリッドアイテム8</div>
+                            <div class="grid-items">グリッドアイテム9</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    grid-auto-flow: row; /* 初期値 */
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">3-12. grid-auto-flow: column; の場合</h3>
+                    <p>自動配置の方向を列（縦方向）にする</p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example03-12">
+                            <div class="grid-items">グリッドアイテム1</div>
+                            <div class="grid-items">グリッドアイテム2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">グリッドアイテム4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">グリッドアイテム6</div>
+                            <div class="grid-items">グリッドアイテム7</div>
+                            <div class="grid-items">グリッドアイテム8</div>
+                            <div class="grid-items">グリッドアイテム9</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    grid-auto-flow: column;
+                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="content-example">
+                    <h3 class="title-type03">3-13. grid-auto-flow: row/column dense; の場合</h3>
+                    <p>自動配置アルゴリズムを変更する。</p>
+                    <div class="code-preview-area">
+                        <div class="grid-wrapper grid-wrapper-example03-13">
+                            <div class="grid-items">グリッドアイテム1</div>
+                            <div class="grid-items">グリッドアイテム2</div>
+                            <div class="grid-items">グリッドアイテム3</div>
+                            <div class="grid-items">グリッドアイテム4</div>
+                            <div class="grid-items">グリッドアイテム5</div>
+                            <div class="grid-items">グリッドアイテム6</div>
+                        </div>
+                    </div>
+                    <div class="code-area">
+                        <pre>
+                            <code class="type-css">
+                /* css */
+                .grid-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-auto-flow: column dense;
+                }
+                .grid-wrapper :nth-child(1) {
+                    grid-row-start: 5;
+                }
+                
                             </code>
                         </pre>
                     </div>
