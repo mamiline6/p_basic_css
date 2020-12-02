@@ -210,6 +210,20 @@ p {
 .grid-wrapper-example03-13 :nth-child(1) {
     grid-row-start: 6;
 }
+/*
+ * gap プロパティ
+ * ・行と列の間のすき間を定義します。row-gap/columns-gapの一括指定です。
+*/
+.grid-wrapper-example04-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: normal normal; /* 初期値 */
+}
+.grid-wrapper-example04-2 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 5px;
+}
 
 
 /* グリッドアイテム */

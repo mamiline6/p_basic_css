@@ -512,7 +512,7 @@
             </div>
         </section>
 
-        <section class="contents-wrapper">
+        <section class="contents-wrapper" style="display: none;">
             <div>
                 <h2 class="title-type02">3. grid ラッパー向け：grid-auto プロパティ3種</h2>
                 <ol class="introduction">
@@ -880,8 +880,68 @@
                 </div>
             </div>
         </section>
-    </div>
 
+        <section class="contents-wrapper">
+            <div>
+                <h2 class="title-type02">4. grid ラッパー向け：gap プロパティ</h2>
+            </div>
+            <div class="content-example">
+                <h3 class="title-type03">4-1. gap: normal; の場合（初期値）</h3>
+                <p>行と列の間のすき間を定義します。row-gap/columns-gapの一括指定です。</p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example04-1">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: normal normal; /* 初期値 'row-gap' 'column-gap' */
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="content-example">
+                <h3 class="title-type03">4-2. gap: 行のすき間 列のすき間; の場合</h3>
+                <p></p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example04-2">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: 20px 5px;
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </div>
 </section><!-- /.flex-example -->
 
 </body>
