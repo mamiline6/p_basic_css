@@ -881,7 +881,7 @@
             </div>
         </section>
 
-        <section class="contents-wrapper">
+        <section class="contents-wrapper" style="display: none;">
             <div>
                 <h2 class="title-type02">4. grid ラッパー向け：gap プロパティ</h2>
             </div>
@@ -935,6 +935,112 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-template-rows: 1fr 1fr 1fr;
                 gap: 20px 5px;
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="contents-wrapper">
+            <div>
+                <h2 class="title-type02">5. grid アイテム向け： grid-column プロパティ</h2>
+            </div>
+            <div class="content-example">
+                <h3 class="title-type03">5-1. grid-column: start / end; の場合</h3>
+                <p></p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example05-1">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                    </div>
+                </div>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example05-1a">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+            }
+            .grid-wrapper :nth-child(1) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(2) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(4) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(5) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(6) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(7) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(8) { /* grid-column: auto / auto; 初期値 */ }
+
+            .grid-wrapper :nth-child(3) {
+                grid-column: 1 / 5;
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="content-example">
+                <h3 class="title-type03">5-2. grid-row: start / end; の場合</h3>
+                <p></p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example05-1">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                    </div>
+                </div>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example05-1b">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+            }
+            .grid-wrapper :nth-child(1) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(2) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(4) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(5) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(6) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(7) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(8) { /* grid-column: auto / auto; 初期値 */ }
+
+            .grid-wrapper :nth-child(3) {
+                grid-column: 2 / 3;
+                grid-row   : 2 / span 3;  /* grid-row: 2 / 5; と同じ */
             }
                         </code>
                     </pre>
