@@ -997,6 +997,58 @@
             </div>
 
             <div class="content-example">
+                <h3 class="title-type03">5-2. grid-auto-flow で grid-row のアイテムを前に寄せたい場合</h3>
+                <p></p>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example05-1a">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                    </div>
+                </div>
+                <div class="code-preview-area">
+                    <div class="grid-wrapper grid-wrapper-example05-1b">
+                        <div class="grid-items">グリッドアイテム1</div>
+                        <div class="grid-items">グリッドアイテム2</div>
+                        <div class="grid-items">グリッドアイテム3</div>
+                        <div class="grid-items">グリッドアイテム4</div>
+                        <div class="grid-items">グリッドアイテム5</div>
+                        <div class="grid-items">グリッドアイテム6</div>
+                        <div class="grid-items">グリッドアイテム7</div>
+                        <div class="grid-items">グリッドアイテム8</div>
+                    </div>
+                </div>
+                <div class="code-area">
+                    <pre>
+                        <code class="type-css">
+            /* css */
+            .grid-wrapper {
+                display: grid;
+                grid-auto-flow: dense;
+            }
+            .grid-wrapper :nth-child(1) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(2) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(4) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(5) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(6) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(7) { /* grid-column: auto / auto; 初期値 */ }
+            .grid-wrapper :nth-child(8) { /* grid-column: auto / auto; 初期値 */ }
+
+            .grid-wrapper :nth-child(3) {
+                grid-column: 2 / 3;
+                grid-row   : 2 / span 3;  /* grid-row: 2 / 5; と同じ */
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="content-example">
                 <h3 class="title-type03">5-2. grid-row: start / end; の場合</h3>
                 <p></p>
                 <div class="code-preview-area">
@@ -1012,7 +1064,7 @@
                     </div>
                 </div>
                 <div class="code-preview-area">
-                    <div class="grid-wrapper grid-wrapper-example05-1b">
+                    <div class="grid-wrapper grid-wrapper-example05-1c">
                         <div class="grid-items">グリッドアイテム1</div>
                         <div class="grid-items">グリッドアイテム2</div>
                         <div class="grid-items">グリッドアイテム3</div>
